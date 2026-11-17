@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>지출 장부 틀 — 60AI만들기</title>
+<style>
+:root{--bg:#f7f8fa;--card:#fff;--line:#dfe3ea;--txt:#1b2030;--dim:#6b7488;--gr:#1f9d55;--bl:#2f6fde}
+@media (prefers-color-scheme:dark){
+ :root{--bg:#0e1117;--card:#171c26;--line:#2a3140;--txt:#e9edf5;--dim:#99a3b8}
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);
+ font:17px/1.65 "Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+ padding:28px 16px 70px}
+.wrap{max-width:640px;margin:0 auto}
+h1{font-size:25px;margin:0 0 6px}
+p.sub{color:var(--dim);margin:0 0 24px;font-size:15px}
+h2{font-size:18px;margin:30px 0 10px}
+.dl{display:flex;flex-direction:column;gap:10px;margin:18px 0 6px}
+.dl a{display:flex;align-items:center;gap:12px;padding:16px 18px;background:var(--card);
+ border:1px solid var(--line);border-radius:13px;text-decoration:none;color:var(--txt)}
+.dl a b{font-size:17px}
+.dl a span{color:var(--dim);font-size:14px;display:block;font-weight:400}
+.dl a .ico{font-size:24px;line-height:1}
+ol{padding-left:22px} ol li{margin:7px 0}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:11px;
+ overflow:hidden;font-size:15.5px;margin-top:10px}
+th{background:rgba(127,140,170,.12);text-align:left;padding:10px 12px;font-size:14px;color:var(--dim)}
+td{padding:10px 12px;border-top:1px solid var(--line)}
+.ok{color:var(--gr);font-weight:700}
+.note{background:var(--card);border:1px solid var(--line);border-radius:12px;
+ padding:14px 16px;margin:22px 0;font-size:15px;color:var(--dim)}
+footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);
+ color:var(--dim);font-size:14px}
+</style>
+</head>
+<body><div class="wrap">
+
+<h1>지출 장부 틀</h1>
+<p class="sub">금액을 적으면 그 줄에 <b>영수증 폴더를 여는 링크</b>가 저절로 생깁니다. 무료입니다.</p>
+
+<div class="dl">
+  <a href="ledger.xlsx" download="지출장부_틀.xlsx">
+    <span class="ico">📗</span>
+    <span><b>지출장부_틀.xlsx</b><span>장부 한 장 · 20줄 · 합계 자동</span></span>
+  </a>
+  <a href="make-folders.bat" download="영수증폴더_만들기.bat">
+    <span class="ico">📁</span>
+    <span><b>영수증폴더_만들기.bat</b><span>R1 ~ R20 폴더를 한 번에 만듭니다</span></span>
+  </a>
+</div>
+
+<h2>쓰는 법</h2>
+<ol>
+  <li>두 파일을 <b>같은 폴더</b>에 둡니다</li>
+  <li><b>영수증폴더_만들기.bat</b> 을 한 번 실행합니다 → <code>영수증\R1</code> ~ <code>R20</code> 이 생깁니다</li>
+  <li><b>지출장부_틀.xlsx</b> 를 열고 금액을 적습니다</li>
+  <li>그 줄에 <b>📁 R1</b> 같은 링크가 생깁니다. 누르면 그 번호의 영수증 폴더가 열립니다</li>
+  <li>영수증 사진을 그 폴더에 넣어 두면 끝입니다</li>
+</ol>
+
+<h2>어디서 되나</h2>
+<table>
+  <tr><th>프로그램</th><th>링크가 열리나</th></tr>
+  <tr><td>한셀</td><td class="ok">⭕ 됩니다</td></tr>
+  <tr><td>무료 오피스</td><td class="ok">⭕ 됩니다</td></tr>
+  <tr><td>엑셀</td><td class="ok">⭕ 됩니다</td></tr>
+</table>
+
+<div class="note">
+매크로가 없습니다. 그래서 <b>보안 경고가 뜨지 않습니다</b>.<br>
+<b>.bat</b> 파일은 받을 때 브라우저가 한 번 물어볼 수 있습니다. 「유지」를 누르시면 됩니다.
+</div>
+
+<footer>
+📺 <b>60AI만들기</b> — 60대 이상도 AI 다 할 수 있다
+</footer>
+
+</div></body>
+</html>
